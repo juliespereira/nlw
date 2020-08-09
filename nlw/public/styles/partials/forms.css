@@ -1,0 +1,51 @@
+.select-block label,
+.input-block label,
+.textarea-block label{
+    font-size: 1.4rem;
+    color: var(--color-text-complement);
+}
+
+.input-block input,
+.select-block select,
+.textarea-block textarea { /* caixas*/
+    width: 100%;
+    height: 5.6rem;
+    margin-top: 0.8rem;
+    border-radius: 0.8rem;
+    background: var(--color-input-background);
+    border: 1px solid var(--color-line-in-white);
+    font: 1.6rem Archivo;
+    outline: 0; /* seleção */
+    padding: 0 1.6rem; /* preenchimento nas laterais */
+}
+
+.textarea-block textarea{ 
+    padding: 1.2rem 1.6rem;
+    height: 16rem;
+
+    resize: vertical; /* tirar o ajuste da caixa input */
+}
+
+.input-block,
+.textarea-block{
+    position: relative;
+}
+
+/* fazendo uma barrinha em baixo do elemento hora p mostrar q ta selecionado*/
+.input-block:focus-within::after,
+.textarea-block:focus-within::after{ /* quando tiver dentro no input um elemento selecionado, cria um elemento */
+    content: ""; /* precisa ter um content q é o conteudo do elemento */
+    width: calc(100% - 3.2rem);
+    height: 2px;
+    background: var(--color-primary-light);
+    position: absolute; 
+    left: 1.6rem;
+    right: 1.6rem;
+    bottom: 0;
+}
+
+label small {
+    font-size: 1.2rem;
+    padding-left: 1.2rem;
+    color: var(--color-small-info);
+}
